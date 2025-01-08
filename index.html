@@ -18,7 +18,7 @@
             text-align: center;
         }
         .container {
-            padding: 300px;
+            padding: 20px;
             max-width: 600px;
         }
         h1 {
@@ -33,16 +33,17 @@
         }
         .slideshow {
             position: relative;
-            width: 480px; /* Matches your image width */
-            height: 853px; /* Matches your image height */
+            width: 100%;
+            max-width: 600px; /* Constrain the slideshow width */
+            aspect-ratio: 4 / 3; /* Match the typical aspect ratio of your images */
             overflow: hidden;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .slideshow img {
-            width: 100%; /* Ensures images fill the slider width */
-            height: 100%; /* Ensures images fill the slider height */
-            object-fit: cover; /* Maintains aspect ratio with minimal cropping */
+            width: 100%; /* Fit the slideshow width */
+            height: 100%; /* Fit the slideshow height */
+            object-fit: cover; /* Crop minimally while maintaining aspect ratio */
             position: absolute;
             opacity: 0;
             transition: opacity 1s ease-in-out;
