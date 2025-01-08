@@ -18,8 +18,12 @@
             text-align: center;
         }
         .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
             padding: 20px;
-            max-width: 600px;
         }
         h1 {
             font-size: 3rem;
@@ -31,19 +35,44 @@
             margin-bottom: 30px;
             animation: fadeIn 3s ease-in-out;
         }
+        .content {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+        }
+        .text-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        .text-box h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .text-box p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
         .slideshow {
             position: relative;
-            width: 100%;
-            max-width: 600px; /* Constrain the slideshow width */
-            aspect-ratio: 4 / 3; /* Match the typical aspect ratio of your images */
+            flex: 1;
+            max-width: 480px;
+            max-height: 800px;
             overflow: hidden;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .slideshow img {
-            width: 100%; /* Fit the slideshow width */
-            height: 100%; /* Fit the slideshow height */
-            object-fit: cover; /* Crop minimally while maintaining aspect ratio */
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             position: absolute;
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -61,10 +90,20 @@
     <div class="container">
         <h1>Happy Birthday, My Love! ❤️</h1>
         <p>You make my world brighter every day. Here's to celebrating you!</p>
-        <div class="slideshow">
-            <img src="img/image1.jpg" alt="Happy Moments" class="active">
-            <img src="img/image2.jpg" alt="Best Wishes">
-            <img src="img/image3.jpg" alt="Forever Together">
+        <div class="content">
+            <!-- Left Text Box -->
+            <div class="text-box">
+                <h2>A Special Message</h2>
+                <p>Dear Love,</p>
+                <p>You are the most amazing person I've ever met, and today is all about celebrating you. Thank you for filling my life with love, joy, and countless memories.</p>
+                <p>Happy birthday! Here's to many more special moments together. ❤️</p>
+            </div>
+            <!-- Right Slideshow -->
+            <div class="slideshow">
+                <img src="img/image1.jpg" alt="Happy Moments" class="active">
+                <img src="img/image2.jpg" alt="Best Wishes">
+                <img src="img/image3.jpg" alt="Forever Together">
+            </div>
         </div>
     </div>
 
